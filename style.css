@@ -113,7 +113,7 @@ body {
 
 .home-content p {
   font-size: 19px;
-  font-weight: 100;
+  font-weight: 200;
   margin: 20px 0 40px;
   text-align: justify;
   word-spacing: 1.5px;
@@ -249,7 +249,7 @@ body {
 
 .about-content p {
   font-size: 19px;
-  font-weight: 100;
+  font-weight: 200;
   margin: 20px 0 40px;
   text-align: justify;
   word-spacing: 1.5px;
@@ -294,6 +294,7 @@ body {
   font-size: 17px;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: 200;
 }
 
 .contact-form {
@@ -332,10 +333,134 @@ body {
 }
 
 /* =======================
+   TECH STACK SECTION
+======================= */
+.tech-stack {
+  background-color: #111;
+  color: white;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.tech-stack h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.tech-stack p {
+  font-size: 18px;
+  margin-bottom: 50px;
+  font-weight: 200;
+}
+
+.stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.stack-card {
+  background: #111;
+  border: 2px solid white;
+  padding: 30px 20px;
+  width: 200px;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack-card i {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stack-card h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.stack-card:hover {
+  transform: translateY(-10px);
+  background: white;
+  color: black;
+}
+
+.stack-card:hover i {
+  color: black;
+}
+
+/* =======================
+  PROJECTS SECTION
+======================= */
+.projects
+{
+  background-color: black;
+  color: white;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.projects h1
+{
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.projects p{
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 50px;
+}
+
+.projects-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.projects-card{
+  background: #111;
+  border: 2px solid white;
+  padding: 30px 20px;
+  width: 560px;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.projects-card img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.projects-card h{
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 10px; 
+}
+
+.projects-card:hover{
+  transform: translateY(-10px);
+  background: white;
+  color: black;
+}
+
+
+/* =======================
    FOOTER SECTION
 ======================= */
 .footer {
-  background: #111;
+  background: black;
   color: white;
   padding: 20px 20%;
   text-align: center;
@@ -579,6 +704,61 @@ body {
   .contact-form button {
     font-size: 16px;
     padding: 12px;
+  }
+
+   .tech-stack h1 {
+    font-size: 40px;
+  }
+
+  .tech-stack p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .stack-container {
+    gap: 20px;
+  }
+
+  .stack-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .stack-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .stack-card h3 {
+    font-size: 18px;
+  }
+
+  .projects h1 {
+    font-size: 40px;
+  }
+
+  .projects p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .projects-container {
+    gap: 20px;
+  }
+
+  .projects-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  .projects-card img {
+    margin-bottom: 15px;
+  }
+
+  .projects-card h {
+    font-size: 18px;
   }
 
   .footer {
