@@ -27,7 +27,7 @@ body {
 ======================= */
 .header {
   background: #111;
-  position: static;
+  position: fixed;
   width: 100%;
   padding: 20px 10%;
   display: flex;
@@ -84,17 +84,23 @@ body {
   text-transform: uppercase;
 }
 
+.navbar ul li a:hover {
+  color: white;
+  text-decoration: underline;
+  transition: 1s ease-in-out;
+}
+
 /* =======================
    HOME SECTION
 ======================= */
 .home {
-  height: 100vh;
+  height: 120vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 60px;
 }
 
 .home-content {
@@ -375,7 +381,7 @@ body {
 
 .stack-card i {
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: white;
 }
 
