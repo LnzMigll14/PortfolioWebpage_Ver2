@@ -564,6 +564,7 @@ body {
     padding: 20px 5%;
     flex-direction: column;
     text-align: center;
+    position: static;
   }
 
   .navbar ul {
