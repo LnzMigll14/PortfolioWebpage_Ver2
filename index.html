@@ -1,26 +1,19 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- =========================
-         META
-    ========================== -->
+    <!-- ================= META ================= -->
+    <!-- Character encoding + responsive viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- =========================
-         PAGE TITLE
-    ========================== -->
+    <!-- ================= TITLE ================= -->
     <title>LnzMigll</title>
 
-    <!-- =========================
-         STYLESHEET
-    ========================== -->
+    <!-- ================= STYLES ================= -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- =========================
-         ICON LIBRARIES
-    ========================== -->
+    <!-- ================= ICON LIBRARIES ================= -->
+    <!-- Font Awesome = common icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -28,18 +21,7 @@
       referrerpolicy="no-referrer"
     />
 
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LnzMigll - Full Stack Developer | Web Development Portfolio</title>
-    <link rel="icon" href="Assets/LnzMigll.png" />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css" />
->>>>>>> 00818464f4a0ee940ea67f6df7eb0f141df67907
+    <!-- Boxicons = extra icons like VSCode -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -47,16 +29,14 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-    <!-- =========================
-         HEADER
-    ========================== -->
-    <header class="site-header">
+    <!-- ================= HEADER ================= -->
+    <!-- The header contains your logo + navigation -->
+    <header class="header">
       <nav class="navbar container">
-        <!-- Brand -->
+        <!-- Brand / site logo -->
         <a href="#" class="logo">LnzMigll</a>
 
-        <!-- Mobile menu toggle -->
+        <!-- Hamburger button appears on mobile -->
         <button
           class="hamburger"
           type="button"
@@ -65,13 +45,14 @@
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <!-- Navigation -->
+        <!-- Main navigation -->
         <div class="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#stacks">Stacks</a>
           <a href="#projects">Projects</a>
 
+          <!-- CTA button inside navbar -->
           <a
             class="menu-btn"
             href="https://github.com/LnzMigll14"
@@ -84,13 +65,10 @@
       </nav>
     </header>
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
-      <!-- =========================
-           HERO SECTION
-      ========================== -->
+      <!-- ================= HERO SECTION ================= -->
+      <!-- First section users see -->
       <section class="hero reveal" id="home">
         <div class="container hero-container">
           <span class="section-tag reveal-item">Hi There!</span>
@@ -106,6 +84,7 @@
             interfaces and powerful backend systems using modern technologies.
           </p>
 
+          <!-- Main call-to-action buttons -->
           <div class="hero-actions reveal-item">
             <a href="mailto:LanzMiguel14@gmail.com" class="btn btn-outline">
               Contact Me
@@ -113,6 +92,7 @@
             <a href="#" class="btn btn-primary">Download CV</a>
           </div>
 
+          <!-- Social links -->
           <div class="social-links">
             <a
               href="https://www.facebook.com/LnzMigll14/"
@@ -139,14 +119,16 @@
         </div>
       </section>
 
-      <!-- =========================
-           ABOUT SECTION
-      ========================== -->
+      <!-- ================= ABOUT SECTION ================= -->
+      <!-- Personal intro + supporting images -->
       <section class="about reveal" id="about">
         <div class="container about-container">
           <div class="about-content">
             <span class="section-tag reveal-item">About Me</span>
-            <h2 class="section-heading reveal-item">An Aspiring Web Developer</h2>
+
+            <h2 class="section-heading reveal-item">
+              An Aspiring Web Developer
+            </h2>
 
             <p class="about-description reveal-item">
               I’m a 25-year-old graduate who earned a Bachelor of Science in
@@ -186,9 +168,8 @@
         </div>
       </section>
 
-      <!-- =========================
-           TECH STACK SECTION
-      ========================== -->
+      <!-- ================= TECH STACK SECTION ================= -->
+      <!-- Shows your technologies and tools -->
       <section class="stack reveal" id="stacks">
         <div class="section-intro">
           <span class="stack-tag reveal-item">Explore my</span>
@@ -198,7 +179,7 @@
         </div>
 
         <div class="container stack-container">
-          <!-- Frontend -->
+          <!-- Frontend card -->
           <article class="stack-card">
             <h3 class="stack-card-title reveal-item">Frontend</h3>
 
@@ -229,7 +210,7 @@
             </div>
           </article>
 
-          <!-- Backend -->
+          <!-- Backend card -->
           <article class="stack-card">
             <h3 class="stack-card-title reveal-item">Backend</h3>
 
@@ -263,7 +244,7 @@
             </div>
           </article>
 
-          <!-- Tools & Frameworks -->
+          <!-- Tools card -->
           <article class="stack-card stack-card-wide">
             <h3 class="stack-card-title reveal-item">Tools & Frameworks</h3>
 
@@ -315,22 +296,19 @@
                 </div>
 
                 <div class="stack-item">
-                  <i class="fa-brands fa-openai"></i>
+                  <i class="fa-solid fa-robot"></i>
                   <div>
                     <h4>ChatGPT</h4>
-                    <p>AI language model for generating human-like text.</p>
+                    <p>AI assistant for research, debugging, and development help.</p>
                   </div>
                 </div>
               </div>
-              
             </div>
           </article>
         </div>
       </section>
 
-      <!-- =========================
-           PROJECTS SECTION
-      ========================== -->
+      <!-- ================= PROJECTS SECTION ================= -->
       <section class="projects reveal" id="projects">
         <div class="container">
           <div class="section-intro">
@@ -338,6 +316,7 @@
             <h2 class="section-heading section-heading-lg reveal-item">
               Projects
             </h2>
+
             <p class="projects-description reveal-item">
               Here are the list of projects that I have done so far. I will be
               adding more projects in the future as I continue to learn and grow
@@ -377,8 +356,7 @@
               <div class="project-content">
                 <h3 class="project-name reveal-item">WebMart</h3>
                 <p class="project-description reveal-item">
-                  An E-Commerce platform for our IME project back in college
-                  days.
+                  An E-Commerce platform for our IME project back in college days.
                 </p>
 
                 <div class="project-actions reveal-item">
@@ -412,260 +390,7 @@
       </section>
     </main>
 
-    <!-- =========================
-         SCRIPT
-    ========================== -->
+    <!-- ================= SCRIPT ================= -->
     <script src="script.js"></script>
   </body>
 </html>
-=======
-    <!-- Header -->
-    <header class="header">
-      <a href="#" class="logo">LnzMigll.</a>
-      <nav class="navbar">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#tech">Tech Stacks</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Home Section -->
-    <section class="home" id="home">
-      <div class="home-content">
-        <h1>Hi, I'm Lanz Miguel</h1>
-        <h3>Full Stack Developer</h3>
-        <p>
-          I am a Bachelor of Science in Information Technology (BSIT) student
-          and an aspiring full stack web developer with a strong passion for
-          creating seamless and user-friendly digital experiences. I thrive on
-          learning both front-end and back-end technologies and enjoy building
-          functional, creative, and responsive web applications.
-        </p>
-        <p>
-          My goal is to become a versatile developer capable of bringing
-          innovative ideas to life, solving real-world problems through code,
-          and continuously growing in this ever-evolving tech industry.
-        </p>
-
-        <div class="btn-box">
-          <a href="#contact">Contact Me</a>
-          <a href="#">Download CV</a>
-        </div>
-
-        <!-- Social Media -->
-        <div class="home-sci">
-          <a
-            href="https://www.facebook.com/LnzMigll14/"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <i class="bx bxl-facebook"></i>
-          </a>
-          <a
-            href="https://github.com/LnzMigll14"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="bx bxl-github"></i>
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <i class="bx bxl-instagram"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="home-img">
-        <img
-          src="https://assets.entrepreneur.com/content/3x2/2000/1593079102-work-731198.jpg?format=pjeg&auto=webp&crop=16:9&width=675&height=380"
-          alt="Modern developer's workstation"
-        />
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="about-img">
-        <img
-          src="https://assets.entrepreneur.com/content/3x2/2000/1593079102-work-731198.jpg?format=pjeg&auto=webp&crop=16:9&width=675&height=380"
-          alt="Developer focused at work"
-        />
-      </div>
-
-      <div class="about-content">
-        <h1>About Me</h1>
-        <p>
-          I’m a 25-year-old student in my final year of a Bachelor of Science in
-          Information Technology. I originally began studying dentistry in 2019,
-          but in 2021, I followed my passion for technology and shifted to IT—a
-          field that’s always fascinated me.
-        </p>
-        <p>
-          Now focused on full stack web development, I’m honing my skills in
-          both front-end and back-end technologies, driven to build meaningful
-          and innovative web applications. The leap from dentistry to tech was
-          bold, but it aligned perfectly with my interests and long-term goals.
-        </p>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="contact-container">
-        <h1>Contact Me</h1>
-        <p>
-          Got a question? Feel free to reach out, and I'll get back to you as
-          soon as possible!
-        </p>
-
-        <form
-          action="https://formspree.io/f/myzebopo"
-          method="POST"
-          class="contact-form"
-        >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section class="tech-stack" id="tech">
-      <h1>My Tech Stack</h1>
-      <p>The tools and technologies I work with:</p>
-      <div class="stack-container">
-        <div class="stack-card">
-          <i class="bx bxl-html5"></i>
-          <h3>HTML</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-css3"></i>
-          <h3>CSS</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-javascript"></i>
-          <h3>JavaScript</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-react"></i>
-          <h3>React</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-nodejs"></i>
-          <h3>Node.js</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-git"></i>
-          <h3>Git</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-github"></i>
-          <h3>GitHub</h3>
-        </div>
-        <div class="stack-card">
-          <i class="bx bxl-visual-studio"></i>
-          <h3>VS Code</h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-      <h1>My Projects</h1>
-      <p>Here are some of the projects I've worked on:</p>
-
-      <div class="projects-container">
-        <div class="projects-card">
-          <a href="https://lnzmigll-portfolio.vercel.app/" target="_blank"
-            ><img src="/Assets/Portfolio Page.png" alt="Portfolio Page"
-          /></a>
-          <h3>Personal Portfolio</h3>
-        </div>
-
-        <div class="projects-card">
-          <a href="https://webmart2023.netlify.app" target="_blank"
-            ><img src="/Assets/WebMart.png" alt=""
-          /></a>
-          <h3>WebMart</h3>
-        </div>
-
-        <div class="projects-card">
-          <a href="https://katsu144.netlify.app/" target="_blank"
-            ><img src="/Assets/Profile Card.png" alt=""
-          /></a>
-          <h3>Profile Card</h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <section class="footer-links">
-        <a href="#home" class="footer-link">Home</a>
-        <a href="#contact" class="footer-link">Contact</a>
-        <a href="#about" class="footer-link">About Me</a>
-      </section>
-
-      <hr class="footer-hr" />
-
-      <section class="footer-text">
-        <p>
-          © 2025 Designed & Developed by Lanz Miguel (LnzMigll). All rights
-          reserved.
-        </p>
-        <p>
-          Unauthorized use and/or duplication of this material without express
-          and written permission from this site’s owner is strictly prohibited.
-        </p>
-      </section>
-
-      <section class="footer-social">
-        <a
-          href="https://www.facebook.com/LnzMigll14/"
-          target="_blank"
-          aria-label="Facebook"
-        >
-          <i class="bx bxl-facebook"></i>
-        </a>
-        <a
-          href="https://github.com/LnzMigll14"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <i class="bx bxl-github"></i>
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          aria-label="Instagram"
-        >
-          <i class="bx bxl-instagram"></i>
-        </a>
-      </section>
-
-      <div class="footer-copyright">
-        <p>
-          © 2025 Copyright:
-          <a href="#home" class="footer-link">LnzMigll</a>
-        </p>
-      </div>
-      
-    </footer>
-  </body>
-</html>
->>>>>>> 00818464f4a0ee940ea67f6df7eb0f141df67907
