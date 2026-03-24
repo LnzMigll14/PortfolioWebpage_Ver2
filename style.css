@@ -38,6 +38,25 @@ body.light-mode {
   --on-accent: #ffffff;
 }
 
+
+body.light-mode .hero-description{
+  font-weight: 300;
+}
+
+body.light-mode .about-description{
+  font-weight: 300;
+}
+
+body.light-mode .projects-description{
+  font-weight: 300;
+}
+
+body.light-mode .project-description{
+  font-weight: 400;
+  color: black;
+
+}
+
 /* =========================
    RESET
    Removes default browser spacing
