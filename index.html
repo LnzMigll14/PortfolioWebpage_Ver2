@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ========================================
+         Meta Tags (Essential for Mobile)
+    ========================================= -->
+    <meta charset="UTF-8" />
+    <!-- This meta tag is crucial! It tells mobile browsers to scale the page to the device width, enabling responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lanz Miguel | Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts: Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ========================================
+         Sidebar / Navigation
+    ========================================= -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <header class="sidebar-header">
+          <h1 class="sidebar-title">Lanz Miguel</h1>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav" aria-label="Primary Navigation">
+          <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+              <a href="#about" class="sidebar-link">About</a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="#experience" class="sidebar-link">Experience</a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="#stacks" class="sidebar-link">Stacks</a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="#projects" class="sidebar-link">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <footer class="sidebar-footer">
+        <p class="sidebar-footer-text">
+          For questions, collabs, &amp; everything else, reach me at
+        </p>
+        <a href="mailto:LanzMiguel14@gmail.com" class="sidebar-contact">
+          <i class="fa-regular fa-envelope"></i>
+          <span>LanzMiguel14@gmail.com</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- ========================================
+         Main Content Area
+    ========================================= -->
+    <main class="main-content">
+      <!-- A wrapper to constrain maximum width and center content -->
+      <div class="main-container">
+        <!-- About Section -->
+        <section class="about" id="about">
+          <div class="about-container">
+            <figure class="about-image">
+              <img
+                src="./Assets/Images/Grad.jpg"
+                alt="Portrait of Lanz Miguel"
+                class="profile-image"
+              />
+            </figure>
+
+            <div class="about-content">
+              <h2 class="about-title">About Me</h2>
+              <p class="about-text about-text-intro">
+                I'm a passionate developer with a love for creating innovative
+                solutions.
+              </p>
+              <p class="about-text">
+                With a background in BSIT, I strive to build products that not
+                only meet user needs but also provide an exceptional experience.
+              </p>
+
+              <!-- Social Links -->
+              <div class="about-links">
+                <a href="#" class="about-link">
+                  <span>GitHub</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="about-link">
+                  <span>LinkedIn</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="mailto:LanzMiguel14@gmail.com" class="about-link">
+                  <span>Email</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+          <h2 class="section-title">Experience</h2>
+          <div class="experience-cards-container">
+            <div class="experience-cards">
+              <div class="experience-year">2025</div>
+              <div class="experience-role">Virtual Assistant</div>
+              <div class="experience-company">Doneverse</div>
+            </div>
+
+            <div class="experience-cards">
+              <div class="experience-year">2025</div>
+              <div class="experience-role">Graduated</div>
+              <div class="experience-company">PWC of Davao</div>
+            </div>
+
+            <div class="experience-cards">
+              <div class="experience-year">2025</div>
+              <div class="experience-role">Technical Support</div>
+              <div class="experience-company">PRC - REGION XI</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="stacks" class="stacks">
+          <h2 class="section-title">Tech Stacks</h2>
+          <div class="tech-stacks-container">
+            <!-- These use a CSS grid layout that automatically wraps on smaller screens -->
+            <div class="tech-stack-card"><span>VS Code</span></div>
+            <div class="tech-stack-card"><span>HTML</span></div>
+            <div class="tech-stack-card"><span>CSS</span></div>
+            <div class="tech-stack-card"><span>JavaScript</span></div>
+            <div class="tech-stack-card"><span>Figma</span></div>
+            <div class="tech-stack-card"><span>ChatGPT</span></div>
+            <div class="tech-stack-card"><span>WordPress</span></div>
+            <div class="tech-stack-card"><span>Avada</span></div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-container">
+            <a href="#" class="projects-card">
+              <h3 class="projects-name">Webmart</h3>
+              <p class="projects-description">
+                An E-Commerce platform for our IME project back in college days.
+              </p>
+              <div class="projects-btn">
+                <span>View Project</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a href="#" class="projects-card">
+              <h3 class="projects-name">KTS Gaming</h3>
+              <p class="projects-description">
+                My very own personal gaming website that displays my gaming
+                profile, stats, and achievements, particularly in CSGO.
+              </p>
+              <div class="projects-btn">
+                <span>View Project</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a href="#" class="projects-card">
+              <h3 class="projects-name">Profile UI Card</h3>
+              <p class="projects-description">
+                Small project that displays a profile card UI with a
+                glassmorphism and hover effects.
+              </p>
+              <div class="projects-btn">
+                <span>View Project</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

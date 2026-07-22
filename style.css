@@ -1,0 +1,450 @@
+/* ==================================================
+   RESET & FOUNDATION
+   Clears default browser spacing to ensure consistency.
+================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding/borders don't increase element width */
+}
+
+/* ==================================================
+   CSS VARIABLES
+   Centralized place for colors, fonts, and sizes. 
+   Makes theme changes and maintenance incredibly easy.
+================================================== */
+:root {
+  --color-bg: #0c0c0f;
+  --color-sidebar: #0c0c0f;
+  --color-text: #ffffff;
+  --color-text-muted: #888888;
+  --color-border: #333333;
+
+  --font-family: "Roboto Mono", monospace;
+  
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 13px;
+  --fs-lg: 20px;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --sidebar-width: 243px;
+  --content-width: 672px;
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling when clicking nav links */
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%; /* Prevents images from overflowing their containers */
+}
+
+a {
+  color: inherit;
+  text-decoration: none; /* Removes default link underlines */
+}
+
+/* ==================================================
+   REUSABLE UTILITIES
+================================================== */
+.section-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  margin-bottom: 24px;
+}
+
+/* ==================================================
+   LAYOUT (Desktop First)
+================================================== */
+.main-content {
+  margin-left: var(--sidebar-width); /* Pushes content right to make room for fixed sidebar */
+  display: flex;
+  justify-content: center;
+  padding: 0 20px; /* Safety padding for when screen scales down */
+}
+
+.main-container {
+  width: 100%;
+  max-width: var(--content-width);
+  padding-bottom: 80px;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0; /* Shorthand for top:0, left:0, bottom:0 */
+  width: var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-sidebar);
+  border-right: 1px solid var(--color-border);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 32px 34px 32px 28px;
+}
+
+.sidebar-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 5px; /* Replaces needing padding on individual li elements */
+}
+
+.sidebar-link {
+  color: var(--color-text-muted);
+  font-size: var(--fs-base);
+  transition: color var(--transition);
+}
+
+.sidebar-link:hover {
+  color: var(--color-text);
+}
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 34px 30px 28px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar-footer-text {
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+}
+
+.sidebar-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+  transition: color var(--transition);
+}
+
+.sidebar-contact span {
+  overflow-wrap: anywhere; /* Prevents long emails from breaking the layout */
+}
+
+.sidebar-contact:hover {
+  color: var(--color-text);
+}
+
+/* ==================================================
+   ABOUT SECTION
+================================================== */
+.about {
+  padding-block: 112px 64px; /* Shorthand for padding-top and padding-bottom */
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.about-image{
+  flex-shrink: 0; /* Prevents the image from shrinking on smaller screens */
+}
+
+.profile-image {
+ display: block;
+  width: 288px;   /* Proportional width that fits nicely alongside the text */
+  height: 300px;   /* Automatically preserves the original photo aspect ratio */
+  border-radius: 0;
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+.about-title {
+  font-size: 40px;
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+}
+
+.about-text {
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.about-text-intro {
+  margin-block: 20px;
+  color: var(--color-text);
+}
+
+.about-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allows links to wrap to next line on small screens */
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  transition: color var(--transition);
+}
+
+.about-link i {
+  font-size: 13px;
+  transition: transform var(--transition);
+}
+
+.about-link:hover {
+  color: var(--color-text);
+}
+
+.about-link:hover i {
+  transform: translate(2px, -2px); /* Diagonal arrow animation */
+}
+
+/* ==================================================
+   EXPERIENCE SECTION
+================================================== */
+.experience {
+  margin-bottom: 64px;
+}
+
+.experience-cards-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.experience-cards {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition);
+}
+
+.experience-cards:last-child {
+  border-bottom: none;
+}
+
+.experience-cards:hover {
+  background: rgba(255, 255, 255, 0.03); /* Softer hover effect */
+}
+
+.experience-year, .experience-company {
+  color: var(--color-text-muted);
+  font-size: var(--fs-base);
+}
+
+.experience-role {
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+}
+
+/* ==================================================
+   TECH STACKS SECTION
+================================================== */
+.stacks {
+  margin-bottom: 64px;
+}
+
+.tech-stacks-container {
+  display: grid;
+  /* Auto-fit magic! Automatically creates columns based on available width. Highly maintainable. */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.tech-stack-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: var(--fs-base);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  cursor: default;
+}
+
+.tech-stack-card:hover {
+  transform: translateY(-4px);
+  border-color: #555;
+}
+
+/* ==================================================
+   PROJECTS SECTION
+================================================== */
+.projects {
+  margin-bottom: 64px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.projects-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.projects-card:hover {
+  border-color: #555;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.projects-name {
+  font-size: 17px;
+  font-weight: var(--fw-bold);
+  margin-bottom: 10px;
+}
+
+.projects-description {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  flex-grow: 1; /* Pushes the button to the bottom if text length varies */
+}
+
+.projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.projects-btn i {
+  transition: transform var(--transition);
+}
+
+.projects-card:hover .projects-btn {
+  color: var(--color-text);
+}
+
+.projects-card:hover .projects-btn i {
+  transform: translate(2px, -2px);
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN (Media Queries)
+   Applies only when the screen width drops below breakpoints
+================================================== */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 960px) {
+  /* Transform the fixed left sidebar into a top navigation bar */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sidebar-content {
+    padding: 20px;
+    gap: 20px;
+    align-items: center; /* Center navigation horizontally */
+  }
+
+  .sidebar-menu {
+    flex-direction: row; /* Make menu items sit side-by-side */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Hide the footer on mobile for a cleaner top header */
+  .sidebar-footer {
+    display: none; 
+  }
+
+  /* Release the margin from the main content so it fills the screen */
+  .main-content {
+    margin-left: 0;
+  }
+
+  .about {
+    padding-block: 60px 40px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 640px) {
+  /* Stack the About section vertically */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-links {
+    justify-content: center; /* Center social links on mobile */
+  }
+
+  /* Stack project cards to a single column */
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Re-format the Experience grid to prevent text overlapping */
+  .experience-cards {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .experience-year {
+    order: 1;
+    font-size: var(--fs-xs);
+  }
+  .experience-role {
+    order: 2;
+  }
+  .experience-company {
+    order: 3;
+  }
+}
