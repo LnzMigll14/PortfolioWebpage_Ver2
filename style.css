@@ -1,80 +1,95 @@
 /* ==================================================
-   RESET & FOUNDATION
-   Clears default browser spacing to ensure consistency.
+   1. RESET & FOUNDATION
 ================================================== */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding/borders don't increase element width */
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ==================================================
-   CSS VARIABLES
-   Centralized place for colors, fonts, and sizes. 
-   Makes theme changes and maintenance incredibly easy.
+   2. DESIGN SYSTEM (Variables)
+   Keeping everything centralized for easy maintenance.
 ================================================== */
 :root {
+  /* Colors */
   --color-bg: #0c0c0f;
   --color-sidebar: #0c0c0f;
   --color-text: #ffffff;
   --color-text-muted: #888888;
   --color-border: #333333;
+  --color-hover-bg: rgba(255, 255, 255, 0.03);
 
-  --font-family: "Roboto Mono", monospace;
+  /* Typography - Forced consistency */
+  --font-main: "Roboto Mono", monospace;
+  --font-alt: "Poppins", sans-serif;
   
   --fs-xs: 12px;
   --fs-sm: 14px;
   --fs-base: 13px;
   --fs-lg: 20px;
+  --fs-xl: 40px;
 
   --fw-regular: 400;
+  --fw-semi: 600;
   --fw-bold: 700;
 
+  /* Layout & Spacing */
   --sidebar-width: 243px;
   --content-width: 672px;
+  --spacing-section: 64px; /* Standardized gap between sections */
   --transition: 0.3s ease;
+  --radius: 12px;
 }
 
-html {
-  scroll-behavior: smooth; /* Enables smooth scrolling when clicking nav links */
-}
-
+/* ==================================================
+   3. GLOBAL STYLES
+================================================== */
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-family);
+  font-family: var(--font-main);
   line-height: 1.6;
 }
 
 img {
   display: block;
-  max-width: 100%; /* Prevents images from overflowing their containers */
+  max-width: 100%;
 }
 
 a {
   color: inherit;
-  text-decoration: none; /* Removes default link underlines */
+  text-decoration: none;
 }
 
-/* ==================================================
-   REUSABLE UTILITIES
-================================================== */
+ul {
+  list-style: none;
+}
+
+/* Reusable Utility Classes */
 .section-title {
-  font-size: var(--fs-lg);
-  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  font-weight: var(--fw-regular);
   margin-bottom: 24px;
 }
 
+.section-spacing {
+  margin-bottom: var(--spacing-section);
+}
+
 /* ==================================================
-   LAYOUT (Desktop First)
+   4. LAYOUT
 ================================================== */
 .main-content {
-  margin-left: var(--sidebar-width); /* Pushes content right to make room for fixed sidebar */
+  margin-left: var(--sidebar-width);
   display: flex;
   justify-content: center;
-  padding: 0 20px; /* Safety padding for when screen scales down */
+  padding: 0 20px;
 }
 
 .main-container {
@@ -84,11 +99,11 @@ a {
 }
 
 /* ==================================================
-   SIDEBAR
+   5. SIDEBAR
 ================================================== */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0; /* Shorthand for top:0, left:0, bottom:0 */
+  inset: 0 auto 0 0; 
   width: var(--sidebar-width);
   height: 100vh;
   display: flex;
@@ -113,8 +128,7 @@ a {
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  list-style: none;
-  gap: 5px; /* Replaces needing padding on individual li elements */
+  gap: 5px;
 }
 
 .sidebar-link {
@@ -135,23 +149,21 @@ a {
   border-top: 1px solid var(--color-border);
 }
 
-.sidebar-footer-text {
+.sidebar-footer-text, 
+.sidebar-contact {
   color: var(--color-text-muted);
   font-size: var(--fs-xs);
-  line-height: 1.5;
 }
 
 .sidebar-contact {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-text-muted);
-  font-size: var(--fs-xs);
   transition: color var(--transition);
 }
 
 .sidebar-contact span {
-  overflow-wrap: anywhere; /* Prevents long emails from breaking the layout */
+  overflow-wrap: anywhere; 
 }
 
 .sidebar-contact:hover {
@@ -159,10 +171,10 @@ a {
 }
 
 /* ==================================================
-   ABOUT SECTION
+   6. ABOUT SECTION
 ================================================== */
 .about {
-  padding-block: 112px 64px; /* Shorthand for padding-top and padding-bottom */
+  padding-block: 112px 64px; 
 }
 
 .about-container {
@@ -171,39 +183,39 @@ a {
   gap: 50px;
 }
 
-.about-image{
-  flex-shrink: 0; /* Prevents the image from shrinking on smaller screens */
+.about-image {
+  flex-shrink: 0;
 }
 
 .profile-image {
- display: block;
-  width: 288px;   /* Proportional width that fits nicely alongside the text */
-  height: 300px;   /* Automatically preserves the original photo aspect ratio */
-  border-radius: 0;
-  object-fit: cover; /* Ensures the image fills the container without distortion */
+  width: 288px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .about-title {
-  font-size: 40px;
+  font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
   line-height: 1.2;
 }
 
 .about-text {
   font-size: var(--fs-sm);
+  font-family: var(--font-alt);
   line-height: 1.8;
   color: var(--color-text-muted);
 }
 
 .about-text-intro {
   margin-block: 20px;
-  color: var(--color-text);
+  font-family: var(--font-alt);
+  color: var(--color-text-muted);
 }
 
 .about-links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Allows links to wrap to next line on small screens */
+  flex-wrap: wrap; 
   gap: 24px;
   margin-top: 24px;
 }
@@ -218,7 +230,7 @@ a {
 }
 
 .about-link i {
-  font-size: 13px;
+  font-size: var(--fs-base);
   transition: transform var(--transition);
 }
 
@@ -227,14 +239,14 @@ a {
 }
 
 .about-link:hover i {
-  transform: translate(2px, -2px); /* Diagonal arrow animation */
+  transform: translate(2px, -2px);
 }
 
 /* ==================================================
-   EXPERIENCE SECTION
+   7. EXPERIENCE SECTION
 ================================================== */
 .experience {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-section);
 }
 
 .experience-cards-container {
@@ -258,7 +270,7 @@ a {
 }
 
 .experience-cards:hover {
-  background: rgba(255, 255, 255, 0.03); /* Softer hover effect */
+  background: var(--color-hover-bg);
 }
 
 .experience-year, .experience-company {
@@ -268,19 +280,26 @@ a {
 
 .experience-role {
   font-size: 16px;
-  font-weight: var(--fw-bold);
+  font-family: var(--font-alt);
+  font-weight: var(--fw-regular);
+}
+
+/* Polkadot Divider */
+.polkadot {
+  width: 100%;
+  height: 46px; 
+  margin-top: 20px; 
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.5px, transparent 1px);
+  background-size: 21px 20px;
+  mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
 }
 
 /* ==================================================
-   TECH STACKS SECTION
+   8. TECH STACKS
 ================================================== */
-.stacks {
-  margin-bottom: 64px;
-}
-
 .tech-stacks-container {
   display: grid;
-  /* Auto-fit magic! Automatically creates columns based on available width. Highly maintainable. */
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 15px;
 }
@@ -293,6 +312,9 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   font-size: var(--fs-base);
+  font-family: var(--font-alt);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
   transition: transform 0.25s ease, border-color 0.25s ease;
   cursor: default;
 }
@@ -303,12 +325,8 @@ a {
 }
 
 /* ==================================================
-   PROJECTS SECTION
+   9. PROJECTS
 ================================================== */
-.projects {
-  margin-bottom: 64px;
-}
-
 .projects-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -321,13 +339,13 @@ a {
   height: 100%;
   padding: 20px;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: var(--radius);
   transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .projects-card:hover {
   border-color: #555;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--color-hover-bg);
 }
 
 .projects-name {
@@ -339,8 +357,9 @@ a {
 .projects-description {
   color: var(--color-text-muted);
   font-size: var(--fs-sm);
+  font-family: var(--font-alt);
   line-height: 1.5;
-  flex-grow: 1; /* Pushes the button to the bottom if text length varies */
+  flex-grow: 1; 
 }
 
 .projects-btn {
@@ -348,7 +367,7 @@ a {
   align-items: center;
   gap: 8px;
   margin-top: 20px;
-  font-weight: 600;
+  font-weight: var(--fw-semi);
   font-size: var(--fs-base);
   color: var(--color-text-muted);
   transition: color var(--transition);
@@ -367,13 +386,54 @@ a {
 }
 
 /* ==================================================
-   RESPONSIVE DESIGN (Media Queries)
-   Applies only when the screen width drops below breakpoints
+   10. GITHUB CONTRIBUTIONS
 ================================================== */
+.contributions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
 
-/* Tablet & Smaller Laptops */
+.contributions-container {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.02); /* Very subtle highlight */
+  
+  /* Enables horizontal scrolling on small mobile screens so the chart doesn't squish */
+  overflow-x: auto; 
+  display: flex;
+  justify-content: center;
+}
+
+.contributions-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.contributions-user:hover {
+  color: var(--color-text);
+}
+
+.contributions-footer {
+  margin-top: 12px;
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+}
+
+
+
+/* ==================================================
+   11. RESPONSIVE DESIGN (Media Queries)
+================================================== */
 @media (max-width: 960px) {
-  /* Transform the fixed left sidebar into a top navigation bar */
   .sidebar {
     position: relative;
     width: 100%;
@@ -385,66 +445,40 @@ a {
   .sidebar-content {
     padding: 20px;
     gap: 20px;
-    align-items: center; /* Center navigation horizontally */
+    align-items: center; 
   }
 
   .sidebar-menu {
-    flex-direction: row; /* Make menu items sit side-by-side */
+    flex-direction: row; 
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
-  /* Hide the footer on mobile for a cleaner top header */
-  .sidebar-footer {
-    display: none; 
-  }
-
-  /* Release the margin from the main content so it fills the screen */
-  .main-content {
-    margin-left: 0;
-  }
-
-  .about {
-    padding-block: 60px 40px;
-  }
+  .sidebar-footer { display: none; }
+  .main-content { margin-left: 0; }
+  .about { padding-block: 60px 40px; }
 }
 
-/* Mobile Devices */
 @media (max-width: 640px) {
-  /* Stack the About section vertically */
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 30px;
   }
-
-  .about-links {
-    justify-content: center; /* Center social links on mobile */
-  }
-
-  /* Stack project cards to a single column */
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* Re-format the Experience grid to prevent text overlapping */
+  
+  .about-links { justify-content: center; }
+  .projects-container { grid-template-columns: 1fr; }
+  
   .experience-cards {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 20px 10px;
     text-align: center;
   }
-
-  .experience-year {
-    order: 1;
-    font-size: var(--fs-xs);
-  }
-  .experience-role {
-    order: 2;
-  }
-  .experience-company {
-    order: 3;
-  }
+  
+  .experience-year { order: 1; font-size: var(--fs-xs); }
+  .experience-role { order: 2; }
+  .experience-company { order: 3; }
 }
