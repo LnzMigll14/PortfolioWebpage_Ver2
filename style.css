@@ -1,7 +1,9 @@
 /* ==================================================
    1. RESET & FOUNDATION
 ================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,11 +14,9 @@ html {
 }
 
 /* ==================================================
-   2. DESIGN SYSTEM (Variables)
-   Keeping everything centralized for easy maintenance.
+   2. DESIGN SYSTEM
 ================================================== */
 :root {
-  /* Colors */
   --color-bg: #0c0c0f;
   --color-sidebar: #0c0c0f;
   --color-text: #ffffff;
@@ -24,10 +24,9 @@ html {
   --color-border: #333333;
   --color-hover-bg: rgba(255, 255, 255, 0.03);
 
-  /* Typography - Forced consistency */
-  --font-main: "Roboto Mono", monospace;
-  --font-alt: "Poppins", sans-serif;
-  
+  --font-main: "Space Grotesk", sans-serif;
+  --font-alt: "JetBrains Mono", monospace;
+
   --fs-xs: 12px;
   --fs-sm: 14px;
   --fs-base: 13px;
@@ -38,16 +37,15 @@ html {
   --fw-semi: 600;
   --fw-bold: 700;
 
-  /* Layout & Spacing */
-  --sidebar-width: 243px;
-  --content-width: 672px;
-  --spacing-section: 64px; /* Standardized gap between sections */
+  --sidebar-width: 230px;
+  --content-width: 800px;
+  --spacing-section: 64px; 
   --transition: 0.3s ease;
   --radius: 12px;
 }
 
 /* ==================================================
-   3. GLOBAL STYLES
+   3. GLOBAL STYLES & IMAGE SHARPNESS FIX
 ================================================== */
 body {
   background: var(--color-bg);
@@ -56,9 +54,13 @@ body {
   line-height: 1.6;
 }
 
+/* Smooths downsampled images to prevent pixelated/harsh sharpness */
 img {
   display: block;
   max-width: 100%;
+  image-rendering: smooth;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); 
 }
 
 a {
@@ -70,12 +72,26 @@ ul {
   list-style: none;
 }
 
-/* Reusable Utility Classes */
+/* ==================================================
+   4. UTILITY CLASSES
+================================================== */
 .section-title {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-alt);
   font-size: var(--fs-base);
   color: var(--color-text-muted);
   font-weight: var(--fw-regular);
-  margin-bottom: 24px;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";  
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-text-muted);
 }
 
 .section-spacing {
@@ -83,7 +99,7 @@ ul {
 }
 
 /* ==================================================
-   4. LAYOUT
+   5. STRUCTURAL LAYOUT
 ================================================== */
 .main-content {
   margin-left: var(--sidebar-width);
@@ -96,14 +112,18 @@ ul {
   width: 100%;
   max-width: var(--content-width);
   padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ==================================================
-   5. SIDEBAR
+   6. COMPONENTS
 ================================================== */
+
+/* --- SIDEBAR --- */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0; 
+  inset: 0 auto 0 0;
   width: var(--sidebar-width);
   height: 100vh;
   display: flex;
@@ -111,6 +131,10 @@ ul {
   justify-content: space-between;
   background: var(--color-sidebar);
   border-right: 1px solid var(--color-border);
+}
+
+.sidebar-header a:hover {
+  color: var(--color-text); 
 }
 
 .sidebar-content {
@@ -121,7 +145,7 @@ ul {
 }
 
 .sidebar-title {
-  font-size: var(--fs-lg);
+  font-size: 18px;
   font-weight: var(--fw-bold);
 }
 
@@ -132,6 +156,7 @@ ul {
 }
 
 .sidebar-link {
+  font-family: var(--font-alt);
   color: var(--color-text-muted);
   font-size: var(--fs-base);
   transition: color var(--transition);
@@ -149,48 +174,85 @@ ul {
   border-top: 1px solid var(--color-border);
 }
 
-.sidebar-footer-text, 
-.sidebar-contact {
+.sidebar-footer-text {
+  font-family: var(--font-alt);
   color: var(--color-text-muted);
   font-size: var(--fs-xs);
 }
 
 .sidebar-contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color var(--transition);
+  margin-top: 5px;
+  border: 1px solid var(--color-border);
+  color: var(--color-bg);
+  background: var(--color-text);
+  transition: all var(--transition);
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
 }
 
 .sidebar-contact span {
-  overflow-wrap: anywhere; 
+  overflow-wrap: anywhere;
 }
 
 .sidebar-contact:hover {
-  color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ==================================================
-   6. ABOUT SECTION
-================================================== */
+/* --- ABOUT SECTION --- */
 .about {
-  padding-block: 112px 64px; 
+  padding-block: 112px 64px;
 }
 
 .about-container {
   display: flex;
   align-items: flex-start;
-  gap: 50px;
+  gap: 40px;
 }
 
 .about-image {
   flex-shrink: 0;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+  margin-top: 8px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.info-item i {
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.info-item:not(:first-child) {
+  font-size: var(--fs-sm);
+  font-family: var(--font-alt);
+  color: var(--color-text-muted);
+}
+
+.info-item:first-child .info-value {
+  font-weight: var(--fw-bold, 600);
+}
+
 .profile-image {
   width: 288px;
-  height: 300px;
+  height: 290px;
   object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform var(--transition), border-color var(--transition);
 }
 
 .about-title {
@@ -208,14 +270,12 @@ ul {
 
 .about-text-intro {
   margin-block: 20px;
-  font-family: var(--font-alt);
-  color: var(--color-text-muted);
 }
 
 .about-links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 24px;
   margin-top: 24px;
 }
@@ -242,13 +302,7 @@ ul {
   transform: translate(2px, -2px);
 }
 
-/* ==================================================
-   7. EXPERIENCE SECTION
-================================================== */
-.experience {
-  margin-bottom: var(--spacing-section);
-}
-
+/* --- EXPERIENCE SECTION --- */
 .experience-cards-container {
   display: flex;
   flex-direction: column;
@@ -273,7 +327,9 @@ ul {
   background: var(--color-hover-bg);
 }
 
-.experience-year, .experience-company {
+.experience-year,
+.experience-company {
+  font-family: var(--font-alt);
   color: var(--color-text-muted);
   font-size: var(--fs-base);
 }
@@ -284,20 +340,7 @@ ul {
   font-weight: var(--fw-regular);
 }
 
-/* Polkadot Divider */
-.polkadot {
-  width: 100%;
-  height: 46px; 
-  margin-top: 20px; 
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.5px, transparent 1px);
-  background-size: 21px 20px;
-  mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
-}
-
-/* ==================================================
-   8. TECH STACKS
-================================================== */
+/* --- TECH STACKS SECTION --- */
 .tech-stacks-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -324,9 +367,7 @@ ul {
   border-color: #555;
 }
 
-/* ==================================================
-   9. PROJECTS
-================================================== */
+/* --- PROJECTS SECTION --- */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -359,7 +400,7 @@ ul {
   font-size: var(--fs-sm);
   font-family: var(--font-alt);
   line-height: 1.5;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .projects-btn {
@@ -385,35 +426,114 @@ ul {
   transform: translate(2px, -2px);
 }
 
-/* ==================================================
-   10. GITHUB CONTRIBUTIONS
-================================================== */
+/* --- GALLERY SECTION --- */
+.gallery-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.gallery-nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-nav-btn {
+  background: transparent;
+  font-size: var(--fs-xs);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.gallery-nav-btn:hover {
+  color: var(--color-text);
+  border-color: #555;
+}
+
+.gallery-viewport {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-viewport::-webkit-scrollbar {
+  display: none; 
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px; 
+}
+
+.gallery-item {
+  flex: 0 0 280px;
+  height: 320px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: border-color var(--transition);
+}
+
+.gallery-item:hover {
+  border-color: #555;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- CLICKABLE IMAGE STYLING --- */
+.clickable-image {
+  cursor: pointer;
+  transition: filter var(--transition), transform var(--transition);
+}
+
+.clickable-image:hover {
+  filter: brightness(1.08);
+}
+
+/* --- GITHUB CONTRIBUTIONS SECTION --- */
 .contributions-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--fs-base);
-  color: var(--color-text-muted);
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.contributions-header .section-title {
+  margin-bottom: 0;
 }
 
 .contributions-container {
   padding: 24px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.02); /* Very subtle highlight */
-  
-  /* Enables horizontal scrolling on small mobile screens so the chart doesn't squish */
-  overflow-x: auto; 
+  background-color: rgba(255, 255, 255, 0.02); 
+  overflow-x: auto;
   display: flex;
   justify-content: center;
+}
+
+.github-chart {
+  min-width: 650px;
+  max-width: 100%;
 }
 
 .contributions-user {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: var(--fs-base);
   color: var(--color-text-muted);
   transition: color var(--transition);
 }
@@ -424,15 +544,111 @@ ul {
 
 .contributions-footer {
   margin-top: 12px;
-  font-size: var(--fs-base);
+  font-size: var(--fs-xs);
+  font-family: var(--font-alt);
   color: var(--color-text-muted);
 }
 
+/* --- IMAGE LIGHTBOX MODAL --- */
+.image-modal {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
+.image-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-caption {
+  margin-top: 16px;
+  color: var(--color-text-muted);
+  font-family: var(--font-alt);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 38px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--color-text-muted);
+}
 
 /* ==================================================
-   11. RESPONSIVE DESIGN (Media Queries)
+   7. ADVANCED VISUAL EFFECTS
 ================================================== */
+
+.polkadot {
+  width: 100%;
+  height: 46px;
+  margin-top: 20px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.10) 1.5px, transparent 1px);
+  background-size: 18px 20px;
+  mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+
+.page-corner-dots {
+  position: fixed;
+  width: 90vh;
+  height: 48vh;
+  max-width: 700px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
+  z-index: 0; 
+}
+
+.page-corner-dots:not(.bottom-corner) {
+  top: 0;
+  left: 230px;
+  mask-image: radial-gradient(circle at top left, black 10%, transparent 65%);
+  -webkit-mask-image: radial-gradient(circle at top left, black 10%, transparent 65%);
+}
+
+.page-corner-dots.bottom-corner {
+  bottom: 0;
+  left: 1400px;
+  mask-image: radial-gradient(circle at bottom right, black 10%, transparent 76%);
+  -webkit-mask-image: radial-gradient(circle at bottom right, black 10%, transparent 76%);
+}
+
+/* ==================================================
+   8. RESPONSIVE DESIGN
+================================================== */
+
 @media (max-width: 960px) {
   .sidebar {
     position: relative;
@@ -441,23 +657,26 @@ ul {
     border-right: none;
     border-bottom: 1px solid var(--color-border);
   }
-
   .sidebar-content {
     padding: 20px;
     gap: 20px;
-    align-items: center; 
+    align-items: center;
   }
-
   .sidebar-menu {
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
-
-  .sidebar-footer { display: none; }
-  .main-content { margin-left: 0; }
-  .about { padding-block: 60px 40px; }
+  .sidebar-footer {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .about {
+    padding-block: 60px 40px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -467,10 +686,12 @@ ul {
     text-align: center;
     gap: 30px;
   }
-  
-  .about-links { justify-content: center; }
-  .projects-container { grid-template-columns: 1fr; }
-  
+  .about-links {
+    justify-content: center;
+  }
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
   .experience-cards {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -478,7 +699,14 @@ ul {
     text-align: center;
   }
   
-  .experience-year { order: 1; font-size: var(--fs-xs); }
-  .experience-role { order: 2; }
-  .experience-company { order: 3; }
+  .experience-year {
+    order: 1;
+    font-size: var(--fs-xs);
+  }
+  .experience-role {
+    order: 2;
+  }
+  .experience-company {
+    order: 3;
+  }
 }
