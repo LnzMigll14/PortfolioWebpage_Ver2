@@ -13,6 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
 /* ==================================================
    2. DESIGN SYSTEM
 ================================================== */
@@ -534,7 +539,7 @@ ul {
 }
 
 .github-chart {
-  min-width: 650px;
+  min-width: 750px;
   max-width: 100%;
 }
 
@@ -723,6 +728,12 @@ ul {
 }
 
 @media (max-width: 640px) {
+
+  .github-chart {
+    min-width: 510px;
+    max-width: 100%;
+  }
+
   .about-container {
     flex-direction: column;
     align-items: center;
