@@ -39,24 +39,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchContributions();
 
-  // ==========================================
-  // 2. HORIZONTAL GALLERY SCROLL
-  // ==========================================
-  const viewport = document.getElementById("gallery-viewport");
-  const prevBtn = document.getElementById("gallery-prev");
-  const nextBtn = document.getElementById("gallery-next");
+// ==========================================
+// 2. SEAMLESS INFINITE LOOP GALLERY
+// ==========================================
+const track = document.querySelector(".gallery-track");
+const prevBtn = document.getElementById("gallery-prev");
+const nextBtn = document.getElementById("gallery-next");
 
-  if (viewport && prevBtn && nextBtn) {
-    const scrollAmount = 300;
+if (track && prevBtn && nextBtn) {
+  let isAnimating = false;
 
-    prevBtn.addEventListener("click", () => {
-      viewport.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
-
-    nextBtn.addEventListener("click", () => {
-      viewport.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
+  // Calculates image width + gap dynamically
+  function getStepWidth() {
+    const item = track.querySelector(".gallery-item");
+    if (!item) return 300;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 20;
+    return item.offsetWidth + gap;
   }
+
+  // SLIDE NEXT: Glides left, then moves first item to the end
+  function slideNext() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const step = getStepWidth();
+    track.style.transition = "transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)";
+    track.style.transform = `translateX(-${step}px)`;
+
+    track.addEventListener(
+      "transitionend",
+      () => {
+        track.style.transition = "none";
+        track.appendChild(track.firstElementChild); // Re-order DOM
+        track.style.transform = "translateX(0)";
+        isAnimating = false;
+      },
+      { once: true }
+    );
+  }
+
+  // SLIDE PREV: Prepends last item to front, then glides right
+  function slidePrev() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const step = getStepWidth();
+
+    // 1. Instantly shift last item to front off-screen
+    track.style.transition = "none";
+    track.prepend(track.lastElementChild);
+    track.style.transform = `translateX(-${step}px)`;
+
+    // 2. Force browser reflow to register instant position
+    void track.offsetWidth;
+
+    // 3. Animate into view
+    track.style.transition = "transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)";
+    track.style.transform = "translateX(0)";
+
+    track.addEventListener(
+      "transitionend",
+      () => {
+        isAnimating = false;
+      },
+      { once: true }
+    );
+  }
+
+  nextBtn.addEventListener("click", slideNext);
+  prevBtn.addEventListener("click", slidePrev);
+
+  // AUTO-PLAY: Cycles automatically every 3.5 seconds
+  let autoPlay = setInterval(slideNext, 3500);
+
+  // Pause on hover
+  track.parentElement.addEventListener("mouseenter", () => clearInterval(autoPlay));
+  track.parentElement.addEventListener("mouseleave", () => {
+    autoPlay = setInterval(slideNext, 3500);
+  });
+}
 
   // ==========================================
   // 3. IMAGE LIGHTBOX MODAL
@@ -112,5 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  
 
 });
