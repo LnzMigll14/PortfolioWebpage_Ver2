@@ -384,6 +384,11 @@ ul {
   gap: 20px;
 }
 
+.projects-container > article {
+  display: flex;
+  height: 100%;
+}
+
 .projects-card {
   display: flex;
   flex-direction: column;
@@ -680,7 +685,7 @@ ul {
 
 .page-corner-dots.bottom-corner {
   bottom: 0;
-  left: 1400px;
+  right: 0; /* Changed from left: 1400px to keep it visible on all screens */
   mask-image: radial-gradient(
     circle at bottom right,
     black 10%,
