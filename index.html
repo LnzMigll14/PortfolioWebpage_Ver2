@@ -3,18 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LnzMigll - Portfolio</title>
+    
+    <!-- Primary Page Title & Meta Tags -->
+    <title>Lanz Lionel Miguel | Web Developer & Virtual Assistant in Davao City</title>
+    <meta name="description" content="Portfolio of Lanz Lionel Miguel (LnzMigll) - Web Developer and Virtual Assistant based in Davao City, Philippines specializing in HTML, CSS, JavaScript, and WordPress." />
+    <meta name="keywords" content="Lanz Lionel Miguel, LnzMigll, Web Developer, Virtual Assistant, Davao City Web Developer, Philippines Freelancer, Frontend Developer" />
+    <meta name="author" content="Lanz Lionel Miguel" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Font Awesome Icons via CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://lnzmigll.dev/" />
 
-    <!-- Google Fonts -->
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lnzmigll.dev/" />
+    <meta property="og:title" content="Lanz Lionel Miguel | Web Developer & Virtual Assistant" />
+    <meta property="og:description" content="Explore the web development portfolio, tech stacks, and projects of Lanz Lionel Miguel." />
+    <meta property="og:image" content="https://lnzmigll.dev/Assets/Images/Grad.jpg" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lnzmigll.dev/" />
+    <meta name="twitter:title" content="Lanz Lionel Miguel | Web Developer & Virtual Assistant" />
+    <meta name="twitter:description" content="Explore the web development portfolio, tech stacks, and projects of Lanz Lionel Miguel." />
+    <meta name="twitter:image" content="https://lnzmigll.dev/Assets/Images/Grad.jpg" />
+
+    <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured Data (JSON-LD Schema for Search Engines) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lanz Lionel Miguel",
+      "alternateName": "LnzMigll",
+      "jobTitle": "Web Developer & Virtual Assistant",
+      "url": "https://lnzmigll.dev/",
+      "image": "https://lnzmigll.dev/Assets/Images/Grad.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Davao City",
+        "addressCountry": "Philippines"
+      },
+      "sameAs": [
+        "https://github.com/LnzMigll14",
+        "https://www.linkedin.com/in/lnzmigll/"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "WordPress",
+        "Figma",
+        "Virtual Assistance"
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -22,7 +74,7 @@
     <aside class="sidebar">
       <div class="sidebar-content">
         <header class="sidebar-header">
-          <a href="#"><h1 class="sidebar-title">lnzmigll.dev</h1></a>
+          <a href="#" aria-label="LnzMigll Home"><span class="sidebar-title">lnzmigll.dev</span></a>
         </header>
 
         <nav class="sidebar-nav" aria-label="Primary Navigation">
@@ -31,13 +83,14 @@
             <li><a href="#experience" class="sidebar-link">Experience</a></li>
             <li><a href="#stacks" class="sidebar-link">Stacks</a></li>
             <li><a href="#projects" class="sidebar-link">Projects</a></li>
+            <li><a href="#gallery" class="sidebar-link">Gallery</a></li>
           </ul>
         </nav>
       </div>
 
       <footer class="sidebar-footer">
         <p class="sidebar-footer-text">For questions, collabs, &amp; everything else</p>
-        <a href="mailto:LanzMiguel14@gmail.com" class="sidebar-contact">
+        <a href="mailto:LanzMiguel14@gmail.com" class="sidebar-contact" aria-label="Send an email to Lanz Miguel">
           <span>Contact Me</span>
         </a>
       </footer>
@@ -54,38 +107,47 @@
         <section class="about" id="about">
           <div class="about-container">
             <figure class="about-image">
-              <img src="./Assets/Images/Grad.jpg" alt="Portrait of Lanz Miguel" class="profile-image" />
-              <div class="info">
+              <img 
+                src="./Assets/Images/Grad.jpg" 
+                alt="Portrait of Lanz Lionel Miguel - Web Developer and Virtual Assistant" 
+                class="profile-image" 
+                width="288" 
+                height="290" 
+                loading="eager" 
+                fetchpriority="high"
+              />
+              <figcaption class="info">
                 <div class="info-item">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
                   <span class="info-value">Lanz Lionel Miguel</span>
                 </div>
                 <div class="info-item">
-                  <i class="fa-solid fa-briefcase"></i>
+                  <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                   <span class="info-value">Web Developer | Virtual Assistant</span>
                 </div>
                 <div class="info-item">
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                   <span class="info-value">Davao City, Philippines</span>
                 </div>
-              </div>
+              </figcaption>
             </figure>
 
             <div class="about-content">
-              <h2 class="section-title">About</h2>
-              <h2 class="about-title">About Me</h2>
-              <p class="about-text about-text-intro">I'm a passionate developer with a love for creating innovative solutions.</p>
-              <p class="about-text">With a background in BSIT, I strive to build products that not only meet user needs but also provide an exceptional experience.</p>
+              <span class="section-title">Overview</span>
+              <!-- Primary H1 tag for main page topic & search relevance -->
+              <h1 class="about-title">Lanz Lionel Miguel</h1>
+              <p class="about-text about-text-intro">I'm a passionate developer with a love for creating innovative web solutions.</p>
+              <p class="about-text">With a background in BSIT, I strive to build products that not only meet user needs but also provide an exceptional digital experience.</p>
               
               <div class="about-links">
-                <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="about-link">
-                  <span>GitHub</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="about-link" aria-label="Lanz Miguel on GitHub">
+                  <span>GitHub</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/lnzmigll/" target="_blank" rel="noopener noreferrer" class="about-link">
-                  <span>LinkedIn</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <a href="https://www.linkedin.com/in/lnzmigll/" target="_blank" rel="noopener noreferrer" class="about-link" aria-label="Lanz Miguel on LinkedIn">
+                  <span>LinkedIn</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
-                <a href="mailto:LanzMiguel14@gmail.com" class="about-link">
-                  <span>Email</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <a href="mailto:LanzMiguel14@gmail.com" class="about-link" aria-label="Email Lanz Miguel">
+                  <span>Email</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -96,21 +158,21 @@
         <section id="experience" class="experience section-spacing">
           <h2 class="section-title">Experience</h2>
           <div class="experience-cards-container">
-            <div class="experience-cards">
+            <article class="experience-cards">
               <div class="experience-year">2025</div>
               <div class="experience-role">Virtual Assistant</div>
               <div class="experience-company">Doneverse</div>
-            </div>
-            <div class="experience-cards">
+            </article>
+            <article class="experience-cards">
               <div class="experience-year">2025</div>
-              <div class="experience-role">Graduated</div>
+              <div class="experience-role">Graduated (BSIT)</div>
               <div class="experience-company">PWC of Davao</div>
-            </div>
-            <div class="experience-cards">
+            </article>
+            <article class="experience-cards">
               <div class="experience-year">2025</div>
               <div class="experience-role">Intern - Technical Support</div>
               <div class="experience-company">PRC - REGION XI</div>
-            </div>
+            </article>
           </div>
           <div class="polkadot"></div>
         </section>
@@ -120,8 +182,8 @@
           <h2 class="section-title">Tech Stacks</h2>
           <div class="tech-stacks-container">
             <div class="tech-stack-card"><span>VSCode</span></div>
-            <div class="tech-stack-card"><span>HTML</span></div>
-            <div class="tech-stack-card"><span>CSS</span></div>
+            <div class="tech-stack-card"><span>HTML5</span></div>
+            <div class="tech-stack-card"><span>CSS3</span></div>
             <div class="tech-stack-card"><span>JavaScript</span></div>
             <div class="tech-stack-card"><span>Figma</span></div>
             <div class="tech-stack-card"><span>ChatGPT</span></div>
@@ -134,21 +196,27 @@
         <section id="projects" class="section-spacing">
           <h2 class="section-title">Projects</h2>
           <div class="projects-container">
-            <a href="https://webmart2023.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card">
-              <h3 class="projects-name">Webmart</h3>
-              <p class="projects-description">An E-Commerce platform for our IME project back in college days.</p>
-              <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-            </a>
-            <a href="https://www.kts-gaming.me/" target="_blank" rel="noopener noreferrer" class="projects-card">
-              <h3 class="projects-name">KTS Gaming</h3>
-              <p class="projects-description">My very own personal gaming website that displays my gaming profile, stats, and achievements, particularly in CSGO.</p>
-              <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-            </a>
-            <a href="https://katsu144.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card">
-              <h3 class="projects-name">Profile UI Card</h3>
-              <p class="projects-description">Small project that displays a profile card UI with a glassmorphism and hover effects.</p>
-              <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-            </a>
+            <article>
+              <a href="https://webmart2023.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="Webmart E-Commerce Platform Project">
+                <h3 class="projects-name">Webmart</h3>
+                <p class="projects-description">An E-Commerce platform for our IME project back in college days.</p>
+                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+              </a>
+            </article>
+            <article>
+              <a href="https://www.kts-gaming.me/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="KTS Gaming Personal Website Project">
+                <h3 class="projects-name">KTS Gaming</h3>
+                <p class="projects-description">My very own personal gaming website that displays my gaming profile, stats, and achievements, particularly in CSGO.</p>
+                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+              </a>
+            </article>
+            <article>
+              <a href="https://katsu144.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="Profile UI Card Project">
+                <h3 class="projects-name">Profile UI Card</h3>
+                <p class="projects-description">Small project that displays a profile card UI with glassmorphism and hover effects.</p>
+                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+              </a>
+            </article>
           </div>
         </section>
 
@@ -156,19 +224,27 @@
         <section id="gallery" class="section-spacing">
           <div class="gallery-header-wrapper">
             <div class="gallery-titles">
-              <span class="section-title" style="margin-bottom: 0">Gallery</span>
+              <h2 class="section-title" style="margin-bottom: 0">Gallery</h2>
             </div>
             <div class="gallery-nav-buttons">
-              <button id="gallery-prev" class="gallery-nav-btn" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></button>
-              <button id="gallery-next" class="gallery-nav-btn" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></button>
+              <button id="gallery-prev" class="gallery-nav-btn" aria-label="Previous image slide"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+              <button id="gallery-next" class="gallery-nav-btn" aria-label="Next image slide"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
             </div>
           </div>
           <div class="gallery-viewport" id="gallery-viewport">
             <div class="gallery-track">
-              <div class="gallery-item"><img src="./Assets/Images/Grad.jpg" alt="Graduation photo" /></div>
-              <div class="gallery-item"><img src="./Assets/Images/grad-2.jpg" alt="Graduation ceremony photo" /></div>
-              <div class="gallery-item"><img src="./Assets/Images/tech-event-with-Kuya-Dev.jpg" alt="Tech Event with Kuya Dev" /></div>
-              <div class="gallery-item"><img src="./Assets/Images/Coder.jpg" alt="Coding session" /></div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/Grad.jpg" alt="Lanz Lionel Miguel graduation photo" width="280" height="320" loading="lazy" decoding="async" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/grad-2.jpg" alt="Lanz Miguel attending college graduation ceremony" width="280" height="320" loading="lazy" decoding="async" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/tech-event-with-Kuya-Dev.jpg" alt="Lanz Miguel attending tech event with Kuya Dev" width="280" height="320" loading="lazy" decoding="async" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/Coder.jpg" alt="Lanz Miguel programming and coding session" width="280" height="320" loading="lazy" decoding="async" />
+              </div>
             </div>
           </div>
         </section>
@@ -176,13 +252,13 @@
         <!-- GITHUB CONTRIBUTIONS SECTION -->
         <section id="contributions" class="section-spacing">
           <div class="contributions-header">
-            <span class="section-title">Github Contributions</span>
-            <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="contributions-user">
-              @LnzMigll14 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <h2 class="section-title" style="margin-bottom: 0">GitHub Contributions</h2>
+            <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="contributions-user" aria-label="View Lanz Miguel's GitHub profile">
+              @LnzMigll14 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
           </div>
           <div class="contributions-container">
-            <img src="https://ghchart.rshah.org/0c0c0f/LnzMigll14" alt="Lanz Miguel's GitHub Contributions" class="github-chart" />
+            <img src="https://ghchart.rshah.org/0c0c0f/LnzMigll14" alt="Lanz Miguel's GitHub contributions chart" class="github-chart" width="650" height="110" loading="lazy" decoding="async" />
           </div>
           <div class="contributions-footer">
             <span id="contributions-count" class="contributions-count">FETCHING CONTRIBUTIONS...</span>
@@ -194,9 +270,9 @@
     </main>
 
     <!-- IMAGE LIGHTBOX MODAL POP-UP -->
-    <div id="image-modal" class="image-modal" aria-hidden="true">
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Image View Modal">
       <button class="modal-close" id="modal-close" aria-label="Close image view">&times;</button>
-      <img class="modal-content" id="modal-img" alt="Enlarged view" />
+      <img class="modal-content" id="modal-img" alt="Enlarged gallery view" />
       <p id="modal-caption" class="modal-caption"></p>
     </div>
 
