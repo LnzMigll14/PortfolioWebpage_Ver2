@@ -6,7 +6,7 @@
     
     <!-- Primary Page Title & Meta Tags -->
     <title>Lanz Lionel Miguel | Web Developer & Virtual Assistant in Davao City</title>
-    <meta name="description" content="Portfolio of Lanz Lionel Miguel (LnzMigll) - Web Developer and Virtual Assistant based in Davao City, Philippines specializing in HTML, CSS, JavaScript, and WordPress." />
+    <meta name="description" content="Portfolio of Lanz Lionel Miguel (LnzMigll), a web developer and virtual assistant in Davao City building responsive websites with HTML, CSS, and WordPress while learning JavaScript." />
     <meta name="keywords" content="Lanz Lionel Miguel, LnzMigll, Web Developer, Virtual Assistant, Davao City Web Developer, Philippines Freelancer, Frontend Developer" />
     <meta name="author" content="Lanz Lionel Miguel" />
     <meta name="robots" content="index, follow" />
@@ -18,15 +18,16 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lnzmigll.dev/" />
     <meta property="og:title" content="Lanz Lionel Miguel | Web Developer & Virtual Assistant" />
-    <meta property="og:description" content="Explore the web development portfolio, tech stacks, and projects of Lanz Lionel Miguel." />
+    <meta property="og:description" content="Explore the responsive websites, projects, and growing front-end skills of Lanz Lionel Miguel." />
     <meta property="og:image" content="https://lnzmigll.dev/Assets/Images/Grad.jpg" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://lnzmigll.dev/" />
     <meta name="twitter:title" content="Lanz Lionel Miguel | Web Developer & Virtual Assistant" />
-    <meta name="twitter:description" content="Explore the web development portfolio, tech stacks, and projects of Lanz Lionel Miguel." />
+    <meta name="twitter:description" content="Explore the responsive websites, projects, and growing front-end skills of Lanz Lionel Miguel." />
     <meta name="twitter:image" content="https://lnzmigll.dev/Assets/Images/Grad.jpg" />
+    <meta name="theme-color" content="#0c0c0f" />
 
     <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +61,7 @@
         "Web Development",
         "HTML5",
         "CSS3",
-        "JavaScript",
+        "Responsive Web Design",
         "WordPress",
         "Figma",
         "Virtual Assistance"
@@ -70,6 +71,8 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
       <div class="sidebar-content">
@@ -83,6 +86,7 @@
             <li><a href="#experience" class="sidebar-link">Experience</a></li>
             <li><a href="#stacks" class="sidebar-link">Stacks</a></li>
             <li><a href="#projects" class="sidebar-link">Projects</a></li>
+            <li><a href="#contributions" class="sidebar-link">Contributions</a></li>
             <li><a href="#gallery" class="sidebar-link">Gallery</a></li>
           </ul>
         </nav>
@@ -97,7 +101,7 @@
     </aside>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <div class="page-corner-dots"></div>
       <div class="page-corner-dots bottom-corner"></div>
 
@@ -136,12 +140,15 @@
               <span class="section-title">Overview</span>
               <!-- Primary H1 tag for main page topic & search relevance -->
               <h1 class="about-title">Lanz Lionel Miguel</h1>
-              <p class="about-text about-text-intro">I'm a passionate developer with a love for creating innovative web solutions.</p>
-              <p class="about-text">With a background in BSIT, I strive to build products that not only meet user needs but also provide an exceptional digital experience.</p>
+              <p class="about-text about-text-intro">I build clean, responsive websites with HTML, CSS, and WordPress while continuing to learn JavaScript.</p>
+              <p class="about-text">As a BSIT graduate and virtual assistant, I enjoy turning ideas into practical digital experiences that are clear, useful, and easy to navigate.</p>
               
               <div class="about-links">
                 <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="about-link" aria-label="Lanz Miguel on GitHub">
-                  <span>GitHub</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  <span>GitHub Profile</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/LnzMigll14/PortfolioWebpage_Ver2" target="_blank" rel="noopener noreferrer" class="about-link" aria-label="View the source code for this portfolio on GitHub">
+                  <span>Portfolio Source</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/lnzmigll/" target="_blank" rel="noopener noreferrer" class="about-link" aria-label="Lanz Miguel on LinkedIn">
                   <span>LinkedIn</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -184,12 +191,28 @@
             <div class="tech-stack-card"><span>VSCode</span></div>
             <div class="tech-stack-card"><span>HTML5</span></div>
             <div class="tech-stack-card"><span>CSS3</span></div>
-            <div class="tech-stack-card"><span>JavaScript</span></div>
+            <div class="tech-stack-card tech-stack-learning">
+              <span>JavaScript</span>
+            </div>
             <div class="tech-stack-card"><span>Figma</span></div>
             <div class="tech-stack-card"><span>ChatGPT</span></div>
             <div class="tech-stack-card"><span>WordPress</span></div>
             <div class="tech-stack-card"><span>Avada</span></div>
           </div>
+
+          <h2 class="section-title">Currently Learning</h2>
+          <div class="tech-stacks-container">
+            <div class="tech-stack-card tech-stack-learning">
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-stack-card tech-stack-learning">
+              <span>React</span>
+            </div>
+            <div class="tech-stack-card tech-stack-learning">
+              <span>Next.js</span>
+            </div>
+          </div>
+
         </section>
 
         <!-- PROJECTS SECTION -->
@@ -199,22 +222,37 @@
             <article>
               <a href="https://webmart2023.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="Webmart E-Commerce Platform Project">
                 <h3 class="projects-name">Webmart</h3>
-                <p class="projects-description">An E-Commerce platform for our IME project back in college days.</p>
-                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                <p class="projects-description">A responsive e-commerce front end created with my team for a college IME project.</p>
+                <ul class="projects-tags" aria-label="Project details">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>College Project</li>
+                </ul>
+                <div class="projects-btn"><span>Visit Live Site</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
               </a>
             </article>
             <article>
               <a href="https://www.kts-gaming.me/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="KTS Gaming Personal Website Project">
                 <h3 class="projects-name">KTS Gaming</h3>
-                <p class="projects-description">My very own personal gaming website that displays my gaming profile, stats, and achievements, particularly in CSGO.</p>
-                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                <p class="projects-description">A personal gaming website presenting my CSGO profile, statistics, and achievements in one focused experience.</p>
+                <ul class="projects-tags" aria-label="Project details">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Personal Project</li>
+                </ul>
+                <div class="projects-btn"><span>Visit Live Site</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
               </a>
             </article>
             <article>
               <a href="https://katsu144.netlify.app/" target="_blank" rel="noopener noreferrer" class="projects-card" aria-label="Profile UI Card Project">
                 <h3 class="projects-name">Profile UI Card</h3>
-                <p class="projects-description">Small project that displays a profile card UI with glassmorphism and hover effects.</p>
-                <div class="projects-btn"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                <p class="projects-description">A focused UI practice project exploring a glassmorphism profile card and interactive hover states.</p>
+                <ul class="projects-tags" aria-label="Project details">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>UI Practice</li>
+                </ul>
+                <div class="projects-btn"><span>Visit Live Site</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
               </a>
             </article>
           </div>
@@ -224,7 +262,7 @@
         <section id="gallery" class="section-spacing">
           <div class="gallery-header-wrapper">
             <div class="gallery-titles">
-              <h2 class="section-title" style="margin-bottom: 0">Gallery</h2>
+              <h2 class="section-title section-title-flush">Gallery</h2>
             </div>
             <div class="gallery-nav-buttons">
               <button id="gallery-prev" class="gallery-nav-btn" aria-label="Previous image slide"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
@@ -234,16 +272,24 @@
           <div class="gallery-viewport" id="gallery-viewport">
             <div class="gallery-track">
               <div class="gallery-item">
-                <img src="./Assets/Images/Grad.jpg" alt="Lanz Lionel Miguel graduation photo" width="280" height="320" loading="lazy" decoding="async" />
+                <button type="button" class="gallery-trigger" aria-label="Open Lanz Lionel Miguel graduation photo">
+                  <img src="./Assets/Images/Grad.jpg" alt="Lanz Lionel Miguel graduation photo" width="280" height="320" loading="lazy" decoding="async" />
+                </button>
               </div>
               <div class="gallery-item">
-                <img src="./Assets/Images/grad-2.jpg" alt="Lanz Miguel attending college graduation ceremony" width="280" height="320" loading="lazy" decoding="async" />
+                <button type="button" class="gallery-trigger" aria-label="Open Lanz Miguel attending college graduation ceremony">
+                  <img src="./Assets/Images/grad-2.jpg" alt="Lanz Miguel attending college graduation ceremony" width="280" height="320" loading="lazy" decoding="async" />
+                </button>
               </div>
               <div class="gallery-item">
-                <img src="./Assets/Images/tech-event-with-Kuya-Dev.jpg" alt="Lanz Miguel attending tech event with Kuya Dev" width="280" height="320" loading="lazy" decoding="async" />
+                <button type="button" class="gallery-trigger" aria-label="Open Lanz Miguel attending a tech event with Kuya Dev">
+                  <img src="./Assets/Images/tech-event-with-Kuya-Dev.jpg" alt="Lanz Miguel attending tech event with Kuya Dev" width="280" height="320" loading="lazy" decoding="async" />
+                </button>
               </div>
               <div class="gallery-item">
-                <img src="./Assets/Images/Coder.jpg" alt="Lanz Miguel programming and coding session" width="280" height="320" loading="lazy" decoding="async" />
+                <button type="button" class="gallery-trigger" aria-label="Open Lanz Miguel programming and coding session">
+                  <img src="./Assets/Images/Coder.jpg" alt="Lanz Miguel programming and coding session" width="280" height="320" loading="lazy" decoding="async" />
+                </button>
               </div>
             </div>
           </div>
@@ -252,7 +298,7 @@
         <!-- GITHUB CONTRIBUTIONS SECTION -->
         <section id="contributions" class="section-spacing">
           <div class="contributions-header">
-            <h2 class="section-title" style="margin-bottom: 0">GitHub Contributions</h2>
+            <h2 class="section-title section-title-flush">GitHub Contributions</h2>
             <a href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer" class="contributions-user" aria-label="View Lanz Miguel's GitHub profile">
               @LnzMigll14 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
@@ -261,7 +307,7 @@
             <img src="https://ghchart.rshah.org/0c0c0f/LnzMigll14" alt="Lanz Miguel's GitHub contributions chart" class="github-chart" width="650" height="110" loading="lazy" decoding="async" />
           </div>
           <div class="contributions-footer">
-            <span id="contributions-count" class="contributions-count">FETCHING CONTRIBUTIONS...</span>
+            <a id="contributions-count" class="contributions-count" href="https://github.com/LnzMigll14" target="_blank" rel="noopener noreferrer">VIEW CONTRIBUTION ACTIVITY ON GITHUB</a>
           </div>
           <div class="polkadot"></div>
         </section>
@@ -270,7 +316,7 @@
     </main>
 
     <!-- IMAGE LIGHTBOX MODAL POP-UP -->
-    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Image View Modal">
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer" aria-describedby="modal-caption">
       <button class="modal-close" id="modal-close" aria-label="Close image view">&times;</button>
       <img class="modal-content" id="modal-img" alt="Enlarged gallery view" />
       <p id="modal-caption" class="modal-caption"></p>

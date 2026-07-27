@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
   
   // ==========================================
@@ -110,13 +112,36 @@ if (track && prevBtn && nextBtn) {
   nextBtn.addEventListener("click", slideNext);
   prevBtn.addEventListener("click", slidePrev);
 
-  // AUTO-PLAY: Cycles automatically every 3.5 seconds
-  let autoPlay = setInterval(slideNext, 3500);
+  // AUTO-PLAY: Respects reduced-motion settings and pauses during interaction
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let autoPlay;
 
-  // Pause on hover
-  track.parentElement.addEventListener("mouseenter", () => clearInterval(autoPlay));
-  track.parentElement.addEventListener("mouseleave", () => {
+  function stopAutoPlay() {
+    if (autoPlay) {
+      clearInterval(autoPlay);
+      autoPlay = null;
+    }
+  }
+
+  function startAutoPlay() {
+    if (reduceMotion || autoPlay) return;
     autoPlay = setInterval(slideNext, 3500);
+  }
+
+  startAutoPlay();
+
+  const viewport = track.parentElement;
+  viewport.addEventListener("mouseenter", stopAutoPlay);
+  viewport.addEventListener("mouseleave", startAutoPlay);
+  viewport.addEventListener("focusin", stopAutoPlay);
+  viewport.addEventListener("focusout", startAutoPlay);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
   });
 }
 
@@ -126,33 +151,41 @@ if (track && prevBtn && nextBtn) {
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-img");
   const modalCaption = document.getElementById("modal-caption");
+  let lastFocusedElement = null;
   const modalClose = document.getElementById("modal-close");
 
-  // Select profile image and gallery images
-  const targetImages = document.querySelectorAll(".gallery-item img");
+  // Use real buttons so gallery images also work with a keyboard
+  const galleryTriggers = document.querySelectorAll(".gallery-trigger");
 
-  targetImages.forEach((img) => {
-    // Add hover cursor styling class
+  galleryTriggers.forEach((trigger) => {
+    const img = trigger.querySelector("img");
+    if (!img) return;
     img.classList.add("clickable-image");
 
-    img.addEventListener("click", () => {
+    trigger.addEventListener("click", () => {
       if (!modal || !modalImg) return;
-      
+
+      lastFocusedElement = trigger;
       modalImg.src = img.src;
       modalImg.alt = img.alt || "Enlarged photo";
-      modalCaption.textContent = img.alt || "";
-      
+      if (modalCaption) modalCaption.textContent = img.alt || "";
+
       modal.classList.add("show");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden"; // Prevent background scrolling
+      modalClose?.focus();
     });
   });
 
   function closeModal() {
     if (!modal) return;
+    const wasOpen = modal.classList.contains("show");
     modal.classList.remove("show");
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = ""; // Restore background scrolling
+    if (wasOpen && lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
   }
 
   if (modalClose) {
