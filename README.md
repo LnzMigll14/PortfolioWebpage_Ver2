@@ -4,7 +4,7 @@ Personal portfolio website for Lanz Lionel Miguel, a web developer and virtual a
 
 ## Live website
 
-[Visit lnzmigll.dev](https://lnzmigll.dev/)
+[Visit Site](https://lnzmiglldev.vercel.app/)
 
 ## About the project
 
