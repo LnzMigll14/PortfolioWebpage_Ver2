@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Page Title & Meta Tags -->
-    <title>
-      Lanz Lionel Miguel | Web Developer & Virtual Assistant in Davao City
-    </title>
+    <title>Lanz Lionel Miguel | Web Developer & Virtual Assistant</title>
     <meta
       name="description"
-      content="Portfolio of Lanz Lionel Miguel (LnzMigll), a web developer and virtual assistant in Davao City building responsive websites with HTML, CSS, and WordPress while learning JavaScript."
-    />
-    <meta
-      name="keywords"
-      content="Lanz Lionel Miguel, LnzMigll, Web Developer, Virtual Assistant, Davao City Web Developer, Philippines Freelancer, Frontend Developer"
+      content="Portfolio of Lanz Lionel Miguel, a Davao City web developer and virtual assistant creating responsive websites with HTML, CSS, JavaScript, and WordPress."
     />
     <meta name="author" content="Lanz Lionel Miguel" />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large"
+    />
 
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://lnzmigll.dev/" />
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_PH" />
+    <meta property="og:site_name" content="LnzMigll" />
     <meta property="og:url" content="https://lnzmigll.dev/" />
     <meta
       property="og:title"
@@ -31,11 +30,15 @@
     />
     <meta
       property="og:description"
-      content="Explore the responsive websites, projects, and growing front-end skills of Lanz Lionel Miguel."
+      content="Explore the projects and front-end work of Lanz Lionel Miguel, a web developer and virtual assistant based in Davao City."
     />
     <meta
       property="og:image"
       content="https://lnzmigll.dev/Assets/Images/Grad.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Portrait of Lanz Lionel Miguel, web developer and virtual assistant"
     />
 
     <!-- Twitter Card Meta Tags -->
@@ -47,11 +50,15 @@
     />
     <meta
       name="twitter:description"
-      content="Explore the responsive websites, projects, and growing front-end skills of Lanz Lionel Miguel."
+      content="Explore the projects and front-end work of Lanz Lionel Miguel, a web developer and virtual assistant based in Davao City."
     />
     <meta
       name="twitter:image"
       content="https://lnzmigll.dev/Assets/Images/Grad.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Portrait of Lanz Lionel Miguel, web developer and virtual assistant"
     />
     <meta name="theme-color" content="#0c0c0f" />
 
@@ -80,33 +87,70 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Structured Data (JSON-LD Schema for Search Engines) -->
+    <!--
+      Structured data identifies the site and the person the portfolio is about.
+      @id values connect the three records without repeating their information.
+    -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Lanz Lionel Miguel",
-        "alternateName": "LnzMigll",
-        "jobTitle": "Web Developer & Virtual Assistant",
-        "url": "https://lnzmigll.dev/",
-        "image": "https://lnzmigll.dev/Assets/Images/Grad.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Davao City",
-          "addressCountry": "Philippines"
-        },
-        "sameAs": [
-          "https://github.com/LnzMigll14",
-          "https://www.linkedin.com/in/lnzmigll/"
-        ],
-        "knowsAbout": [
-          "Web Development",
-          "HTML5",
-          "CSS3",
-          "Responsive Web Design",
-          "WordPress",
-          "Figma",
-          "Virtual Assistance"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://lnzmigll.dev/#website",
+            "url": "https://lnzmigll.dev/",
+            "name": "LnzMigll",
+            "alternateName": ["Lanz Lionel Miguel", "lnzmigll.dev"],
+            "creator": {
+              "@id": "https://lnzmigll.dev/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://lnzmigll.dev/#profile",
+            "url": "https://lnzmigll.dev/",
+            "name": "Lanz Lionel Miguel - Web Developer Portfolio",
+            "description": "Portfolio of Lanz Lionel Miguel, a web developer and virtual assistant based in Davao City, Philippines.",
+            "isPartOf": {
+              "@id": "https://lnzmigll.dev/#website"
+            },
+            "mainEntity": {
+              "@id": "https://lnzmigll.dev/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://lnzmigll.dev/#person",
+            "name": "Lanz Lionel Miguel",
+            "alternateName": "LnzMigll",
+            "url": "https://lnzmigll.dev/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://lnzmigll.dev/Assets/Images/Grad.jpg",
+              "caption": "Portrait of Lanz Lionel Miguel"
+            },
+            "jobTitle": ["Web Developer", "Virtual Assistant"],
+            "description": "Davao City web developer and virtual assistant building responsive websites with HTML, CSS, JavaScript, and WordPress.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Davao City",
+              "addressCountry": "PH"
+            },
+            "sameAs": [
+              "https://github.com/LnzMigll14",
+              "https://www.linkedin.com/in/lnzmigll/"
+            ],
+            "knowsAbout": [
+              "Web Development",
+              "HTML5",
+              "CSS3",
+              "JavaScript",
+              "Responsive Web Design",
+              "WordPress",
+              "Figma",
+              "Virtual Assistance"
+            ]
+          }
         ]
       }
     </script>
@@ -119,7 +163,7 @@
     <aside class="sidebar">
       <div class="sidebar-content">
         <header class="sidebar-header">
-          <a href="#" aria-label="LnzMigll Home"
+          <a href="/" aria-label="LnzMigll Home"
             ><span class="sidebar-title">lnzmigll.dev</span></a
           >
         </header>
@@ -224,7 +268,7 @@
               <h1 class="about-title">
                 I am a
                 <!-- Typed.js inserts the rotating job titles in this span. -->
-                <span id="type-effect"></span>
+                <span id="type-effect">Web Developer.</span>
               </h1>
               <p class="about-text about-text-intro">
                 I build clean, responsive websites with HTML, CSS, and WordPress

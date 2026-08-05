@@ -299,8 +299,11 @@ function initTypingEffect() {
   // Typed is supplied by the external typed.js script in index.html.
   if (!targetElement || typeof Typed === "undefined") return;
 
+  // Remove the static SEO fallback before Typed.js starts its animation.
+  targetElement.textContent = "";
+
   new Typed("#type-effect", {
-    strings: ["Web Developer.", "Designer.", "Virtual Assistant."],
+    strings: ["Web Developer.", "Virtual Assistant."],
     typeSpeed: 70,
     backSpeed: 60,
     loop: true,
